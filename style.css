@@ -1,0 +1,691 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 115, 0, 0.2);
+}
+
+nav {
+    max-width: 1500px;
+    min-height: 78px;
+
+    margin: auto;
+    padding: 0 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo {
+    color: #ff7300;
+
+    font-size: 22px;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.menu a {
+    color: #ff7300;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ffffff;
+}
+
+
+/* GENEL BÖLÜMLER */
+
+section {
+    min-height: 100vh;
+
+    padding: 140px 8%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.section-label {
+    color: #ff7300;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(60px, 10vw, 150px);
+
+    line-height: 0.85;
+
+    color: #ff7300;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+}
+
+h2 {
+    color: #ff7300;
+
+    font-size: clamp(42px, 6vw, 82px);
+
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+
+    font-weight: 800;
+}
+
+h3 {
+    color: #ff7300;
+
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+p {
+    color: #ffffff;
+
+    font-size: 17px;
+
+    max-width: 800px;
+}
+
+
+/* =========================
+   ANA SAYFA
+========================= */
+
+#anasayfa {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* VIDEO */
+
+.hero-video {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* VIDEO KARARTMA */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.05) 55%,
+            rgba(0,0,0,0.65)
+        );
+}
+
+
+/* BUTON ALANI */
+
+.discover-area {
+
+    position: absolute;
+
+    bottom: 55px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* KÖYÜ KEŞFET */
+
+.discover-button {
+
+    display: inline-block;
+
+    padding: 15px 34px;
+
+    background: #ff7300;
+
+    color: #000000;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    border-radius: 3px;
+
+    transition: 0.3s;
+}
+
+.discover-button:hover {
+
+    background: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* AŞAĞI OK */
+
+.down-arrow {
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    margin-top: 8px;
+
+    animation: arrowMove 1.5s infinite;
+}
+
+
+@keyframes arrowMove {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+
+
+/* =========================
+   KÖYÜMÜZ
+========================= */
+
+#koyumuz {
+
+    background: #080808;
+}
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-top: 50px;
+}
+
+.info-card {
+
+    padding: 30px;
+
+    min-height: 220px;
+
+    border:
+        1px solid
+        rgba(255,115,0,0.25);
+
+    background: #0e0e0e;
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+
+    border-color: #ff7300;
+
+    transform: translateY(-5px);
+}
+
+.info-card span {
+
+    color: #ff7300;
+
+    font-weight: 900;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TARİHÇE
+========================= */
+
+#tarihce {
+
+    background: #0d0d0d;
+}
+
+.timeline {
+
+    margin-top: 40px;
+
+    max-width: 900px;
+}
+
+.timeline-item {
+
+    display: grid;
+
+    grid-template-columns:
+        60px 1fr;
+
+    gap: 20px;
+
+    padding: 25px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.1);
+}
+
+.timeline-item > span {
+
+    color: #ff7300;
+
+    font-weight: 900;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   GALERİ
+========================= */
+
+.gallery-placeholder {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+.gallery-placeholder div {
+
+    height: 220px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ff7300;
+
+    border:
+        1px solid
+        rgba(255,115,0,0.25);
+
+    background: #111111;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   DOĞA
+========================= */
+
+.nature-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 50px;
+}
+
+.nature-grid > div {
+
+    padding: 35px;
+
+    background: #101010;
+
+    border:
+        1px solid
+        rgba(255,115,0,0.2);
+}
+
+.nature-grid span {
+
+    color: #ff7300;
+
+    font-weight: 900;
+}
+
+
+/* =========================
+   ANILAR
+========================= */
+
+#anilar {
+
+    background: #0d0d0d;
+}
+
+.memory-box {
+
+    margin-top: 40px;
+
+    max-width: 700px;
+
+    padding: 35px;
+
+    border-left:
+        4px solid
+        #ff7300;
+
+    background: #111111;
+}
+
+.memory-box strong {
+
+    color: #ff7300;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   HABERLER
+========================= */
+
+.news-box {
+
+    margin-top: 40px;
+
+    max-width: 800px;
+
+    padding: 35px;
+
+    background: #101010;
+
+    border:
+        1px solid
+        rgba(255,115,0,0.25);
+}
+
+.news-box span {
+
+    color: #ff7300;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   İLETİŞİM
+========================= */
+
+#iletisim {
+
+    background: #080808;
+}
+
+#iletisim p {
+
+    margin-bottom: 30px;
+}
+
+.email-button {
+
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 15px 30px;
+
+    background: #ff7300;
+
+    color: #000000;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    border-radius: 3px;
+
+    transition: 0.3s;
+}
+
+.email-button:hover {
+
+    background: #ffffff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 50px 30px;
+
+    background: #000000;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(255,115,0,0.2);
+}
+
+footer .logo {
+
+    margin-bottom: 15px;
+}
+
+footer p {
+
+    margin: 5px auto;
+
+    color: #777777;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBİL
+========================= */
+
+@media (max-width: 1000px) {
+
+    nav {
+
+        flex-direction: column;
+
+        padding: 18px 20px;
+    }
+
+    .menu {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 10px 15px;
+    }
+
+    .info-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .gallery-placeholder {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .nature-grid {
+
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    section {
+
+        padding:
+            130px
+            22px
+            70px;
+    }
+
+    .menu {
+
+        gap: 8px 12px;
+    }
+
+    .menu a {
+
+        font-size: 11px;
+    }
+
+    .info-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-placeholder {
+
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-placeholder div {
+
+        height: 180px;
+    }
+
+    .timeline-item {
+
+        grid-template-columns:
+            35px 1fr;
+    }
+
+    .discover-area {
+
+        bottom: 35px;
+    }
+
+    .discover-button {
+
+        padding:
+            13px
+            25px;
+    }
+}
